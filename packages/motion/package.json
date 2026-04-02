@@ -1,6 +1,6 @@
 {
     "name": "@termuijs/motion",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Spring physics and easing animations for TermUI",
     "type": "module",
     "main": "./dist/index.cjs",

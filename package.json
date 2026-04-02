@@ -1,6 +1,6 @@
 {
   "name": "termui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "A TypeScript-first framework for building beautiful, interactive terminal user interfaces",
   "scripts": {

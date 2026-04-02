@@ -1,6 +1,6 @@
 {
     "name": "@termuijs/data",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "System data providers for TermUI: CPU, memory, disk, processes, network",
     "type": "module",
     "main": "./dist/index.cjs",

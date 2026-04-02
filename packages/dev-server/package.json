@@ -1,6 +1,6 @@
 {
     "name": "@termuijs/dev-server",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "File-watching dev server for TermUI that restarts your app on save",
     "type": "module",
     "main": "./dist/index.cjs",

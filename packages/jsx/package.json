@@ -1,6 +1,6 @@
 {
     "name": "@termuijs/jsx",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "JSX runtime for TermUI with useState, useEffect, useContext, useAsync, and memo()",
     "type": "module",
     "main": "./dist/index.cjs",
