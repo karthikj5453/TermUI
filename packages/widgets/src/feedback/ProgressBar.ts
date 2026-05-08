@@ -2,7 +2,7 @@
 // @termuijs/widgets — ProgressBar widget
 // ─────────────────────────────────────────────────────
 
-import { type Screen, type Style, styleToCellAttrs, type Color } from '@termuijs/core';
+import { type Screen, type Style, styleToCellAttrs, type Color, caps, BLOCK } from '@termuijs/core';
 import { Widget } from '../base/Widget.js';
 
 export interface ProgressBarOptions {
@@ -49,6 +49,11 @@ export class ProgressBar extends Widget {
         this._showLabel = options.showLabel ?? true;
         this._labelFormat = options.labelFormat ?? 'percent';
         this._total = options.total ?? 100;
+
+        if (!caps.unicode) {
+            this._fillChar = BLOCK.full;   // '#'
+            this._emptyChar = BLOCK.empty; // ' '
+        }
     }
 
     /** Set progress value (0–1) */

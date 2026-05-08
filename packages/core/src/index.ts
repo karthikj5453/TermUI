@@ -10,6 +10,8 @@ export type { Cell } from './terminal/Screen.js';
 export { Renderer } from './terminal/Renderer.js';
 export { LayerManager } from './terminal/LayerManager.js';
 export type { Layer } from './terminal/LayerManager.js';
+export { caps } from './terminal/env-caps.js';
+export { BOX, BRAILLE_SPIN, BLOCK } from './terminal/ascii-map.js';
 
 // ── Input ─────────────────────────────────────────────
 export { InputParser } from './input/InputParser.js';

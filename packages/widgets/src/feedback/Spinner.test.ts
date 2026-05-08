@@ -2,7 +2,7 @@
 // @termuijs/widgets — Tests for Spinner widget
 // ─────────────────────────────────────────────────────
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { Spinner, SPINNER_FRAMES } from './Spinner.js';
 
 describe('Spinner', () => {
@@ -33,5 +33,33 @@ describe('Spinner', () => {
             spinner: { frames: ['A', 'B', 'C'], interval: 50 },
         });
         expect(spinner).toBeDefined();
+    });
+});
+
+describe('Spinner — ASCII fallback', () => {
+    beforeEach(() => {
+        vi.unstubAllEnvs();
+        vi.resetModules();
+    });
+
+    it('uses ASCII frames when NO_UNICODE=1 and spinner is dots (unicode frames)', async () => {
+        vi.stubEnv('NO_UNICODE', '1');
+        vi.stubEnv('TERM', '');
+        vi.resetModules();
+        const { Spinner } = await import('./Spinner.js');
+        const spinner = new Spinner({}, { spinner: 'dots' });
+        // Access private _frames via cast
+        const frames = (spinner as unknown as { _frames: string[] })._frames;
+        expect(frames).toEqual(['|', '/', '-', '\\']);
+    });
+
+    it('uses unicode frames when unicode is available', async () => {
+        vi.stubEnv('NO_UNICODE', '');
+        vi.stubEnv('TERM', '');
+        vi.resetModules();
+        const { Spinner, SPINNER_FRAMES } = await import('./Spinner.js');
+        const spinner = new Spinner({}, { spinner: 'dots' });
+        const frames = (spinner as unknown as { _frames: string[] })._frames;
+        expect(frames).toEqual(SPINNER_FRAMES.dots.frames);
     });
 });

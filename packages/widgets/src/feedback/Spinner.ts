@@ -2,7 +2,7 @@
 // @termuijs/widgets — Spinner widget
 // ─────────────────────────────────────────────────────
 
-import { type Screen, type Style, styleToCellAttrs, type Color } from '@termuijs/core';
+import { type Screen, type Style, styleToCellAttrs, type Color, caps, BRAILLE_SPIN } from '@termuijs/core';
 import { Widget } from '../base/Widget.js';
 
 /**
@@ -81,6 +81,11 @@ export class Spinner extends Widget {
         this._interval = spinnerDef.interval;
         this._label = options.label ?? '';
         this._color = options.color ?? { type: 'named', name: 'cyan' };
+
+        if (!caps.unicode && this._frames.some(f => f.codePointAt(0)! > 127)) {
+            this._frames = Array.from(BRAILLE_SPIN);
+            this._interval = 130; // match 'line' spinner speed
+        }
     }
 
     /** Update the spinner label */
