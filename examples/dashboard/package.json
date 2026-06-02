@@ -6,7 +6,7 @@
     "description": "Example dashboard app using TermUI",
     "scripts": {
         "start": "bun src/index.ts",
-        "dev": "bun src/index.ts",
+        "dev": "bun --watch src/index.ts",
         "build": "echo 'no build needed'"
     },
     "dependencies": {
