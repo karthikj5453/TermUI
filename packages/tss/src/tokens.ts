@@ -1,7 +1,4 @@
-// ─────────────────────────────────────────────────────
-// Design Tokens — TypeScript-first color system
-// with auto dark/light detection
-// ─────────────────────────────────────────────────────
+import { readFileSync } from 'node:fs';
 
 export interface ThemeTokens {
   bg: string;
@@ -81,4 +78,29 @@ export function tokensToTSS(name: string, tokens: ThemeTokens): string {
     return `@theme ${name} {\n` +
         Object.entries(tokens).map(([k, v]) => `  --${k}: ${v};`).join('\n') +
         '\n}';
+}
+
+/**
+ * Load theme tokens from a JSON file.
+ * Reads the file, parses it, and extracts the theme tokens.
+ */
+export function loadThemeFromFile(filePath: string): ThemeTokens {
+    const content = readFileSync(filePath, 'utf-8');
+    const parsed = JSON.parse(content);
+    
+    // Support nested "tokens" property or flat root level
+    const tokens = parsed.tokens ?? parsed;
+    
+    return {
+        bg: tokens.bg ?? '#000000',
+        fg: tokens.fg ?? '#ffffff',
+        primary: tokens.primary ?? '#7C3AED',
+        secondary: tokens.secondary ?? '#6366f1',
+        success: tokens.success ?? '#22c55e',
+        warning: tokens.warning ?? '#f59e0b',
+        error: tokens.error ?? '#ef4444',
+        muted: tokens.muted ?? '#6b7280',
+        border: tokens.border ?? '#374151',
+        highlight: tokens.highlight ?? '#1e1b4b',
+    };
 }

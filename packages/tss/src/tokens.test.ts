@@ -1,5 +1,6 @@
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { tokensToTSS } from './tokens.js';
+import { describe, it, expect, afterEach, vi } from 'vitest';
+import { tokensToTSS, loadThemeFromFile } from './tokens.js';
+import { writeFileSync, unlinkSync } from 'node:fs';
 
 describe('ThemeTokens', () => {
   const requiredKeys = [
@@ -75,5 +76,44 @@ describe('tokensToTSS', () => {
   it('handles empty tokens', () => {
     const result = tokensToTSS('empty', {} as any);
     expect(result).toBe('@theme empty {\n\n}');
+  });
+});
+
+describe('loadThemeFromFile', () => {
+  const tempFile = './temp-theme.json';
+
+  afterEach(() => {
+    try {
+      unlinkSync(tempFile);
+    } catch {}
+  });
+
+  it('correctly loads theme tokens from flat JSON file', () => {
+    writeFileSync(tempFile, JSON.stringify({
+      bg: '#111111',
+      fg: '#222222',
+      primary: '#333333',
+    }));
+
+    const tokens = loadThemeFromFile(tempFile);
+    expect(tokens.bg).toBe('#111111');
+    expect(tokens.fg).toBe('#222222');
+    expect(tokens.primary).toBe('#333333');
+    expect(tokens.secondary).toBe('#6366f1'); // default fallback
+  });
+
+  it('correctly loads theme tokens from nested tokens JSON file', () => {
+    writeFileSync(tempFile, JSON.stringify({
+      name: 'nested-theme',
+      tokens: {
+        bg: '#aaaaaa',
+        fg: '#bbbbbb',
+      }
+    }));
+
+    const tokens = loadThemeFromFile(tempFile);
+    expect(tokens.bg).toBe('#aaaaaa');
+    expect(tokens.fg).toBe('#bbbbbb');
+    expect(tokens.primary).toBe('#7C3AED'); // default fallback
   });
 });
