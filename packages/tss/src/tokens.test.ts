@@ -17,19 +17,21 @@ describe('ThemeTokens', () => {
   ];
 
   it('defaultDark has all 10 required keys with non-empty string values', async () => {
-  const { defaultDark } = await import('./tokens.ts');    for (const key of requiredKeys) {
+    const { defaultDark } = await import('./tokens.js');
+    for (const key of requiredKeys) {
       expect(defaultDark).toHaveProperty(key);
-      expect(typeof defaultDark[key]).toBe('string');
-      expect(defaultDark[key]).toBeTruthy();
+      expect(typeof defaultDark[key as keyof typeof defaultDark]).toBe('string');
+      expect(defaultDark[key as keyof typeof defaultDark]).toBeTruthy();
     }
     expect(Object.keys(defaultDark)).toHaveLength(10);
   });
 
   it('defaultLight has all 10 required keys with non-empty string values', async () => {
-  const { defaultLight } = await import('./tokens.ts');    for (const key of requiredKeys) {
+    const { defaultLight } = await import('./tokens.js');
+    for (const key of requiredKeys) {
       expect(defaultLight).toHaveProperty(key);
-      expect(typeof defaultLight[key]).toBe('string');
-      expect(defaultLight[key]).toBeTruthy();
+      expect(typeof defaultLight[key as keyof typeof defaultLight]).toBe('string');
+      expect(defaultLight[key as keyof typeof defaultLight]).toBeTruthy();
     }
     expect(Object.keys(defaultLight)).toHaveLength(10);
   });
@@ -37,14 +39,14 @@ describe('ThemeTokens', () => {
   it('systemTheme equals defaultDark when COLORFGBG=15;0 (dark terminal)', async () => {
     vi.stubEnv('COLORFGBG', '15;0');
     vi.resetModules();
-    const { systemTheme, defaultDark } = await import('./tokens.ts');
+    const { systemTheme, defaultDark } = await import('./tokens.js');
     expect(systemTheme).toEqual(defaultDark);
   });
 
   it('systemTheme equals defaultLight when COLORFGBG=0;15 (light terminal)', async () => {
     vi.stubEnv('COLORFGBG', '0;15');
     vi.resetModules();
-    const { systemTheme, defaultLight } = await import('./tokens.ts');
+    const { systemTheme, defaultLight } = await import('./tokens.js');
     expect(systemTheme).toEqual(defaultLight);
   });
 
@@ -52,14 +54,14 @@ describe('ThemeTokens', () => {
     vi.stubEnv('COLORFGBG', '');
     vi.stubEnv('TERM_BACKGROUND', 'light');
     vi.resetModules();
-    const { systemTheme, defaultLight } = await import('./tokens.ts');
+    const { systemTheme, defaultLight } = await import('./tokens.js');
     expect(systemTheme).toEqual(defaultLight);
   });
 
   it('systemTheme equals defaultDark by default (no env vars)', async () => {
     vi.unstubAllEnvs();
     vi.resetModules();
-    const { systemTheme, defaultDark } = await import('./tokens.ts');
+    const { systemTheme, defaultDark } = await import('./tokens.js');
     expect(systemTheme).toEqual(defaultDark);
   });
 });
