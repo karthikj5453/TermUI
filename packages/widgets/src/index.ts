@@ -47,7 +47,6 @@ export { useTableState } from './data/TableState.js';
 export type { TableState } from './data/TableState.js';
 export { TreeTable } from './data/TreeTable.js';
 export type { TreeTableColumn, TreeTableRow, TreeTableOptions } from './data/TreeTable.js';
-export type { TableColumn, TableRow, TableOptions } from './data/Table.js';
 export { Gauge } from './data/Gauge.js';
 export type { GaugeOptions } from './data/Gauge.js';
 export { LineGauge } from './data/LineGauge.js';
