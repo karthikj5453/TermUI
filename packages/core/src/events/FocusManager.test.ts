@@ -264,4 +264,21 @@ describe('FocusManager Re-entrancy', () => {
         // After re-entrant focusNext, should end up on 'c'
         expect(fm.currentId).toBe('c');
     });
+
+    it('registering a new focusable that sorts before current does not change current focus', () => {
+        const fm = new FocusManager();
+        // A (10), B (20)
+        fm.register(makeWidget('a', 10, true));
+        fm.register(makeWidget('b', 20, true));
+
+        // Focus B
+        fm.focusWidget('b');
+        expect(fm.currentId).toBe('b');
+
+        // Register C with lower tabIndex that sorts before existing items
+        fm.register(makeWidget('c', 5, true));
+
+        // Observable behavior: focused id must remain 'b'
+        expect(fm.currentId).toBe('b');
+    });
 });
