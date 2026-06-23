@@ -240,3 +240,6 @@ export type { ChatThreadOptions } from './ChatThread.js';
 export { TokenUsage } from './TokenUsage.js';
 export type { TokenUsageOptions } from './TokenUsage.js';
 
+export { WelcomeScreen } from './WelcomeScreen.js';
+export type { WelcomeScreenOptions, KeymapHint } from './WelcomeScreen.js';
+
