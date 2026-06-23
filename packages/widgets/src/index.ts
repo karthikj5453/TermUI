@@ -129,6 +129,8 @@ export type { SplitPaneOptions, SplitDirection } from './layout/SplitPane.js';
 // ── Feedback Widgets ──────────────────────────────────
 export { ProgressBar } from './feedback/ProgressBar.js';
 export type { ProgressBarOptions } from './feedback/ProgressBar.js';
+export { ProgressCircle } from './display/ProgressCircle.js';
+export type { ProgressCircleOptions, ProgressCircleSize } from './display/ProgressCircle.js';
 export { MultiProgress } from './feedback/MultiProgress.js';
 export type { ProgressItem, MultiProgressOptions } from './feedback/MultiProgress.js';
 export { Spinner, SPINNER_FRAMES } from './feedback/Spinner.js';
