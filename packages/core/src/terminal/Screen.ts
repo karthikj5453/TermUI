@@ -5,6 +5,7 @@
 import { type Color, colorToRgb } from '../style/Color.js';
 import { stringWidth, segmenter } from '../utils/unicode.js';
 import { stripAnsiControl } from '../utils/ansi.js';
+import { stripAnsiEscapes, sanitizeForDisplay } from './sanitize.js';
 import { caps } from './env-caps.js';
 
 const EMPTY_COLOR: Color = Object.freeze({ type: 'none' } as const);
@@ -370,7 +371,7 @@ export class Screen {
         if (!(row >= 0 && row < this._rows)) return;
 
         // Strip ANSI control sequences from user-supplied content to prevent escape injection
-        const safeStr = stripAnsiControl(str);
+        const safeStr = stripAnsiEscapes(str);
         let x = col;
         
         const segments = segmenter.segment(safeStr);
@@ -412,6 +413,29 @@ export class Screen {
 
             x += width;
         }
+    }
+
+    /**
+     * Write a string to the back buffer.
+     *
+     * TermUI's cell grid does not interpret inline ANSI codes — colors and
+     * attributes are applied via the `style` param / cell attrs, not via
+     * escape sequences embedded in `str`. Any escape sequences in `str`
+     * (including SGR) would only render as visible garbage characters, so
+     * this method currently delegates to `writeString`, which strips all of
+     * them — identical behavior to calling `writeString` directly. It exists
+     * as a distinct, forward-compatible entry point in case formatted-string
+     * support is added later; it does not currently preserve SGR.
+     */
+    writeFormattedString(
+        col: number,
+        row: number,
+        str: string,
+        style: Partial<Omit<Cell, 'char' | 'width'>> = {},
+    ): void {
+        // Delegate to writeString — the cell grid cannot interpret inline
+        // ANSI codes, so all text paths must be sanitized.
+        this.writeString(col, row, str, style);
     }
 
     /**
