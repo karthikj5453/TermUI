@@ -4,7 +4,7 @@
 
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { Transfer } from './Transfer.js';
-import { Screen, caps } from '@termuijs/core';
+import { Screen, caps, stringWidth } from '@termuijs/core';
 
 const ITEMS = [
     { label: 'Apple', value: 'apple' },
@@ -200,6 +200,23 @@ describe('Transfer', () => {
 
         const row4 = screen.back[4].map(c => c.char).join('');
         expect(row4).toBe('          │          ');
+    });
+
+    it('truncates wide labels by terminal cell width', () => {
+        vi.spyOn(caps, 'unicode', 'get').mockReturnValue(false);
+
+        const screen = new Screen(7, 1);
+        const writeSpy = vi.spyOn(screen, 'writeString');
+        const transfer = new Transfer([
+            { label: '你好你好', value: 'wide' },
+        ]);
+
+        transfer.updateRect({ x: 0, y: 0, width: 7, height: 1 });
+        transfer.render(screen);
+
+        for (const call of writeSpy.mock.calls) {
+            expect(stringWidth(String(call[2]))).toBeLessThanOrEqual(3);
+        }
     });
 
     it('does not write pane content outside a width-one rect', () => {
