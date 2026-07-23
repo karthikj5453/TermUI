@@ -114,6 +114,9 @@ export type { StackedBarChartOptions, StackedSeries } from './data/StackedBarCha
 export { GanttChart } from './data/GanttChart.js';
 export type { GanttChartOptions, GanttTask } from './data/GanttChart.js';
 
+export { KanbanBoard } from './data/KanbanBoard.js';
+export type { KanbanCard, KanbanColumn, KanbanBoardOptions } from './data/KanbanBoard.js';
+
 // ── Layout Widgets ────────────────────────────────────
 export { Grid, GridItem } from './layout/Grid.js';
 export type { GridOptions, GridItemOptions } from './layout/Grid.js';
