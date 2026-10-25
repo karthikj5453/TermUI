@@ -14,8 +14,8 @@ We want to thank all the amazing contributors who have helped make TermUI what i
 | <img src="https://avatars.githubusercontent.com/u/195310178?v=4" width="40" height="40" style="border-radius: 50%;" alt="ZainabTravadi" /> | [@ZainabTravadi](https://github.com/ZainabTravadi) | 38 |
 | <img src="https://avatars.githubusercontent.com/u/203988207?v=4" width="40" height="40" style="border-radius: 50%;" alt="jainiksha" /> | [@jainiksha](https://github.com/jainiksha) | 31 |
 | <img src="https://avatars.githubusercontent.com/u/260001286?v=4" width="40" height="40" style="border-radius: 50%;" alt="ashroxy" /> | [@ashroxy](https://github.com/ashroxy) | 28 |
+| <img src="https://avatars.githubusercontent.com/u/208207751?v=4" width="40" height="40" style="border-radius: 50%;" alt="karthikj5453" /> | [@karthikj5453](https://github.com/karthikj5453) | 27 |
 | <img src="https://avatars.githubusercontent.com/u/150170054?v=4" width="40" height="40" style="border-radius: 50%;" alt="realtushartyagi" /> | [@realtushartyagi](https://github.com/realtushartyagi) | 27 |
-| <img src="https://avatars.githubusercontent.com/u/208207751?v=4" width="40" height="40" style="border-radius: 50%;" alt="karthikj5453" /> | [@karthikj5453](https://github.com/karthikj5453) | 26 |
 | <img src="https://avatars.githubusercontent.com/u/228184960?v=4" width="40" height="40" style="border-radius: 50%;" alt="riddhima25bet10005-a11y" /> | [@riddhima25bet10005-a11y](https://github.com/riddhima25bet10005-a11y) | 20 |
 | <img src="https://avatars.githubusercontent.com/u/191742943?v=4" width="40" height="40" style="border-radius: 50%;" alt="Rish-2006" /> | [@Rish-2006](https://github.com/Rish-2006) | 18 |
 | <img src="https://avatars.githubusercontent.com/u/67773620?v=4" width="40" height="40" style="border-radius: 50%;" alt="Satvik-art-creator" /> | [@Satvik-art-creator](https://github.com/Satvik-art-creator) | 16 |
@@ -25,9 +25,9 @@ We want to thank all the amazing contributors who have helped make TermUI what i
 | <img src="https://avatars.githubusercontent.com/u/170925990?v=4" width="40" height="40" style="border-radius: 50%;" alt="knoxiboy" /> | [@knoxiboy](https://github.com/knoxiboy) | 13 |
 | <img src="https://avatars.githubusercontent.com/u/176702645?v=4" width="40" height="40" style="border-radius: 50%;" alt="RosheshChaware" /> | [@RosheshChaware](https://github.com/RosheshChaware) | 13 |
 | <img src="https://avatars.githubusercontent.com/u/166059220?v=4" width="40" height="40" style="border-radius: 50%;" alt="kajalpa302005" /> | [@kajalpa302005](https://github.com/kajalpa302005) | 13 |
-| <img src="https://avatars.githubusercontent.com/u/177104344?v=4" width="40" height="40" style="border-radius: 50%;" alt="Nikhil-0710" /> | [@Nikhil-0710](https://github.com/Nikhil-0710) | 12 |
-| <img src="https://avatars.githubusercontent.com/u/149316563?v=4" width="40" height="40" style="border-radius: 50%;" alt="Pranaykarvi" /> | [@Pranaykarvi](https://github.com/Pranaykarvi) | 12 |
 | <img src="https://avatars.githubusercontent.com/u/173547900?v=4" width="40" height="40" style="border-radius: 50%;" alt="TanCodeX" /> | [@TanCodeX](https://github.com/TanCodeX) | 12 |
+| <img src="https://avatars.githubusercontent.com/u/149316563?v=4" width="40" height="40" style="border-radius: 50%;" alt="Pranaykarvi" /> | [@Pranaykarvi](https://github.com/Pranaykarvi) | 12 |
+| <img src="https://avatars.githubusercontent.com/u/177104344?v=4" width="40" height="40" style="border-radius: 50%;" alt="Nikhil-0710" /> | [@Nikhil-0710](https://github.com/Nikhil-0710) | 12 |
 | <img src="https://avatars.githubusercontent.com/u/192892137?v=4" width="40" height="40" style="border-radius: 50%;" alt="RitikOnWork" /> | [@RitikOnWork](https://github.com/RitikOnWork) | 11 |
 | <img src="https://avatars.githubusercontent.com/u/197649458?v=4" width="40" height="40" style="border-radius: 50%;" alt="Komal2008" /> | [@Komal2008](https://github.com/Komal2008) | 10 |
 | <img src="https://avatars.githubusercontent.com/u/208695824?v=4" width="40" height="40" style="border-radius: 50%;" alt="Ishika-1110" /> | [@Ishika-1110](https://github.com/Ishika-1110) | 10 |
@@ -127,7 +127,7 @@ We want to thank all the amazing contributors who have helped make TermUI what i
 | <img src="https://avatars.githubusercontent.com/u/208924886?v=4" width="40" height="40" style="border-radius: 50%;" alt="HarshaNaidu11" /> | [@HarshaNaidu11](https://github.com/HarshaNaidu11) | 2 |
 | <img src="https://avatars.githubusercontent.com/u/166910327?v=4" width="40" height="40" style="border-radius: 50%;" alt="NachiketPatil26" /> | [@NachiketPatil26](https://github.com/NachiketPatil26) | 2 |
 | <img src="https://avatars.githubusercontent.com/u/230632139?v=4" width="40" height="40" style="border-radius: 50%;" alt="mohitmeena3883" /> | [@mohitmeena3883](https://github.com/mohitmeena3883) | 2 |
-| <img src="https://avatars.githubusercontent.com/u/273593121?v=4" width="40" height="40" style="border-radius: 50%;" alt="lakshaygujjar273-cys" /> | [@lakshaygujjar273-cys](https://github.com/lakshaygujjar273-cys) | 2 |
+| <img src="https://avatars.githubusercontent.com/u/273593121?v=4" width="40" height="40" style="border-radius: 50%;" alt="lakshaygujjar273" /> | [@lakshaygujjar273](https://github.com/lakshaygujjar273) | 2 |
 | <img src="https://avatars.githubusercontent.com/u/171361885?v=4" width="40" height="40" style="border-radius: 50%;" alt="kunal-9090" /> | [@kunal-9090](https://github.com/kunal-9090) | 2 |
 | <img src="https://avatars.githubusercontent.com/u/234469520?v=4" width="40" height="40" style="border-radius: 50%;" alt="hrx01-dev" /> | [@hrx01-dev](https://github.com/hrx01-dev) | 2 |
 | <img src="https://avatars.githubusercontent.com/u/221292688?v=4" width="40" height="40" style="border-radius: 50%;" alt="Shri-Ananth" /> | [@Shri-Ananth](https://github.com/Shri-Ananth) | 1 |
